@@ -13,10 +13,6 @@ export default {
             userText :''
         }
     },
-
-    created () {
-        console.log('ciao');
-    }
 }
 </script>
 
