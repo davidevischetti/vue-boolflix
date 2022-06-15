@@ -7,7 +7,6 @@
 <script>
 import MyContent from './components/MyContent.vue';
 
-
 export default {
   name: 'App',
   components: {
@@ -30,5 +29,9 @@ export default {
  display: flex; 
  justify-content: center;
  align-items: center;
+
+ ul {
+  list-style-type: none;
+ }
 }
 </style>
