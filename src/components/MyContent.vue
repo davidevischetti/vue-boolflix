@@ -30,7 +30,7 @@ export default {
         apiUrlShows : 'https://api.themoviedb.org/3/search/tv?api_key=9a1f1b500f27b1739ad066bae2ae67ba&language=it_IT&query=',
         filmList : [],
         tvShowsList : [],
-        userInput : undefined,
+        userInput : '',
       }
     },
 
