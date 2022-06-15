@@ -31,14 +31,15 @@ export default {
         filmList : [],
         tvShowsList : [],
         userInput : '',
+        userUrl : ''
       }
     },
 
     methods : {
       // CHIAMATA AD AXIOS
       searchFilm() {
-          let userUrlMovies = this.apiUrlMovies + this.userInput;
-          axios.get(userUrlMovies)
+          this.userUrl= this.apiUrlMovies + this.userInput;
+          axios.get(this.userUrl)
           .then((result) => {
             this.filmList = result.data.results;
             console.log(this.filmList);
@@ -49,8 +50,8 @@ export default {
       },
 
       searchShows() {
-          var userUrlShows = this.apiUrlShows + this.userInput;
-          axios.get(userUrlShows)
+          this.userUrl = this.apiUrlShows + this.userInput;
+          axios.get(this.userUrl)
           .then((result) => {
             this.tvShowsList = result.data.results;
             console.log(this.tvShowsList);
@@ -69,7 +70,7 @@ export default {
     },
 
     // STAMPO I RISULTATI DELLA RICERCA
-    unmounted () {
+    beforeUpdate () {
       this.searchFilm();
       this.searchShows();
     },

@@ -4,7 +4,7 @@
         <ul>
           <li>{{show.original_name}}</li>
           <li>{{show.name}}</li>
-          <li>{{show.original_language}}</li>
+          <li><lang-flag :iso='show.original_language'/></li>
           <li>{{show.vote_average}}</li>
         </ul>
       </li>
@@ -12,8 +12,11 @@
 </template>
 
 <script>
+import LangFlag from 'vue-lang-code-flags'
+
 export default {
   name: 'MyShows',
+  components: { LangFlag },
   props : ['list']
 }
 </script>
