@@ -39,5 +39,14 @@ h2 {
   margin-top: 30px;
 }
 
+.yellow-star {
+    color: #fd1;
+}
+
+.grey-star {
+  color: #ccc;
+  opacity: 0.5;
+}
+
 }
 </style>

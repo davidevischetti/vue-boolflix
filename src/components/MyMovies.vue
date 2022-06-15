@@ -9,12 +9,19 @@
           <li>{{film.original_title}}</li>
           <li>{{film.title}}</li>
           <li><lang-flag :iso='film.original_language'/></li>
-          <li>{{film.vote_average}}</li>
+          <li>
+            <span>
+               <i v-for="(star,i) in Math.round(film.vote_average / 2)" :key="i"><font-awesome-icon icon="fa-solid fa-star" class="yellow-star"/></i>
+            </span>
+            <span>
+              <i v-for="(star,i) in (5 - Math.round(film.vote_average / 2))" :key="i"><font-awesome-icon icon="fa-solid fa-star" class="grey-star"/></i>
+            </span>
+          </li>
         </ul>
       </li>
     </ul>
   </section>
-  
+
 </template>
 
 <script>

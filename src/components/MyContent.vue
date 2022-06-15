@@ -2,7 +2,7 @@
   <div id="content">
 
     <!-- COMPONENTE BARRA DI RICERCA -->
-    <SearchBar @search="searchNewResults" />
+    <SearchBar @search="searchNewResults"/>
 
     <!-- COMPONENTE LISTA FILM -->
     <MyMovies :list="filmList" />
@@ -29,7 +29,7 @@ export default {
         filmList : [],
         tvShowsList : [],
         userInput : '',
-        userUrl : ''
+        userUrl : '',
       }
     },
 
@@ -58,6 +58,7 @@ export default {
             console.log('error', error);
           })
       },
+
 
       // EMIT DEL VALORE DELLA RICERCA DAL COMPONENT SEARCHBAR
       searchNewResults (newInput) {
