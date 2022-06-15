@@ -2,6 +2,7 @@
     <ul id="movie-list">
       <li class="movie-card" v-for="(film,i) in list" :key="i" >
         <ul>
+          <li><img :src="'http://image.tmdb.org/t/p/w92/' + film.poster_path"></li>
           <li>{{film.original_title}}</li>
           <li>{{film.title}}</li>
           <li><lang-flag :iso='film.original_language'/></li>
@@ -33,7 +34,7 @@ export default {
     .movie-card {
         background-color: #fff;
         flex-basis: 12%;
-        height: 150px;
+        min-height: 150px;
         margin: 20px calc((100% - (12% * 6)) / 12);
     }
   }

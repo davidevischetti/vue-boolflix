@@ -70,7 +70,7 @@ export default {
     },
 
     // STAMPO I RISULTATI DELLA RICERCA
-    beforeUpdate () {
+    unmounted () {
       this.searchFilm();
       this.searchShows();
     },
