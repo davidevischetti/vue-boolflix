@@ -30,8 +30,14 @@ export default {
  justify-content: center;
  align-items: center;
 
- ul {
+ul {
   list-style-type: none;
- }
+}
+
+h2 {
+  color: #fff;
+  margin-top: 30px;
+}
+
 }
 </style>

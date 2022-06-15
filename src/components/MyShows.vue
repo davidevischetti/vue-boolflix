@@ -1,7 +1,11 @@
 <template>
+
+  <section>
+    <h2>SERIE TV</h2>
     <ul id="tv-show-list">
       <li class="tv-show-card" v-for="(show,i) in list" :key="i" >
         <ul>
+          <li><img :src="'http://image.tmdb.org/t/p/w92/' + show.poster_path" :alt="show.name +'-poster'"></li>
           <li>{{show.original_name}}</li>
           <li>{{show.name}}</li>
           <li><lang-flag :iso='show.original_language'/></li>
@@ -9,6 +13,8 @@
         </ul>
       </li>
     </ul>
+  </section>
+
 </template>
 
 <script>
@@ -33,7 +39,7 @@ export default {
     .tv-show-card {
         background-color: #fff;
         flex-basis: 12%;
-        height: 150px;
+        min-height: 150px;
         margin: 20px calc((100% - (12% * 6)) / 12);
     }
   }

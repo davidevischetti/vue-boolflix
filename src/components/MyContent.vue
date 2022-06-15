@@ -5,11 +5,9 @@
     <SearchBar @search="searchNewResults" />
 
     <!-- COMPONENTE LISTA FILM -->
-    <h2>FILM</h2>
     <MyMovies :list="filmList" />
 
     <!-- COMPONENTE LISTA SERIE TV -->
-    <h2>SERIE TV</h2>
     <MyShows :list="tvShowsList" />
 
   </div>
@@ -83,12 +81,7 @@ export default {
 <style scoped lang="scss">
 #content {
   width: calc(100% - 200px);
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh);
   background-color: #222;
-
-  h2 {
-    color: #fff;
-    margin-top: 30px;
-  }
 }
 </style>

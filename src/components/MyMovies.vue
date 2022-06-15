@@ -1,8 +1,11 @@
 <template>
+
+  <section>
+    <h2>FILM</h2>
     <ul id="movie-list">
       <li class="movie-card" v-for="(film,i) in list" :key="i" >
         <ul>
-          <li><img :src="'http://image.tmdb.org/t/p/w92/' + film.poster_path"></li>
+          <li><img :src="'http://image.tmdb.org/t/p/w92/' + film.poster_path" :alt="film.title +'-poster'"></li>
           <li>{{film.original_title}}</li>
           <li>{{film.title}}</li>
           <li><lang-flag :iso='film.original_language'/></li>
@@ -10,6 +13,8 @@
         </ul>
       </li>
     </ul>
+  </section>
+  
 </template>
 
 <script>
