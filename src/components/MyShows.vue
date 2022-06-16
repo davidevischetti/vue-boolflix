@@ -11,10 +11,10 @@
           <li><lang-flag :iso='show.original_language'/></li>
           <li>
             <span>
-               <i v-for="(star,i) in Math.round(show.vote_average / 2)" :key="i"><font-awesome-icon icon="fa-solid fa-star" class="yellow-star"/></i>
+               <i v-for="i in getStars" :key="i"><font-awesome-icon icon="fa-solid fa-star" class="yellow-star"/></i>
             </span>
             <span>
-              <i v-for="(star,i) in (5 - Math.round(show.vote_average / 2))" :key="i"><font-awesome-icon icon="fa-solid fa-star" class="grey-star"/></i>
+              <i v-for="i in (5 - getStars)" :key="i"><font-awesome-icon icon="fa-solid fa-star" class="grey-star"/></i>
             </span>
           </li>
         </ul>
@@ -32,6 +32,11 @@ export default {
   components: { LangFlag },
   props : ['list'],
 
+  computed : {
+    getStars () {
+      return Math.round(this.show.vote_average / 2)
+    }
+  }
 }
 </script>
 

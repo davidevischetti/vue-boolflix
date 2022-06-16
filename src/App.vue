@@ -23,6 +23,7 @@ export default {
 }
 
 #app {
+font-family: Verdana, Geneva, Tahoma, sans-serif;
  width: 100%;
  min-height: 100vh;
  background-color: #444;
