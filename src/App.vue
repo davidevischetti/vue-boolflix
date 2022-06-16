@@ -37,7 +37,8 @@ ul {
 
 h2 {
   color: #fff;
-  margin-top: 30px;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .yellow-star {

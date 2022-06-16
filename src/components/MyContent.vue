@@ -66,15 +66,7 @@ export default {
         this.searchFilm();
         this.searchShows();
       }
-    },
-
-    // STAMPO I RISULTATI DELLA RICERCA
-    unmounted () {
-      this.searchFilm();
-      this.searchShows();
-    },
-
-
+    }
 }
 </script>
 
@@ -84,5 +76,6 @@ export default {
   width: 100%;
   min-height: calc(100vh);
   background-color: #222;
+  padding-bottom: 50px;
 }
 </style>
