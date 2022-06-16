@@ -2,8 +2,10 @@
 
   <section>
     <h2>FILM</h2>
+    <font-awesome-icon icon="fa-solid fa-circle-arrow-left" class="arrow prev"/>
+    <font-awesome-icon icon="fa-solid fa-circle-arrow-right" class="arrow next" @click="nextCard()" />
     <ul id="movie-list">
-      <li class="movie-card" v-for="(film,i) in list" :key="i" >
+      <li class="movie-card" v-for="(film,i) in list" :key="i" :class="switchNextCard ? 'next-card' : ''" >
         <ul>
           <li>{{film.original_title}}</li>
           <!-- <li>{{film.title}}</li> -->
@@ -31,7 +33,20 @@ import LangFlag from 'vue-lang-code-flags'
 export default {
   name: 'MyMovies',
   components:{ LangFlag },
-  props : ['list']
+  props : ['list'],
+  data () {
+    return {
+      switchNextCard : false,
+    }
+  },
+
+  methods : {
+    nextCard () {
+      if (this.switchNextCard === false) {
+        this.switchNextCard = true
+      } 
+    }
+  }
 }
 </script>
 
@@ -40,14 +55,46 @@ export default {
 section {
   padding-left: 100px;
   padding-right: 100px;
+  position: relative;
+
+  .arrow {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  color: #fff;
+
+  &:hover {
+    transform: scale(110%);
+  }
+
+  }
+
+  .next {
+    top: 50%;
+    right: 50px;
+  }
+
+  .prev {
+    top: 50%;
+    left: 50px;
+  }
+
 
 
   #movie-list {
     list-style-type: none;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: hidden;
 
-
+    .next-card {
+      transform: translate(-500%,0);
+      transition: all 2s;
+    }
+    .prev-card {
+      transform: translate(0,0);
+      transition: all 2s;
+    }
     .movie-card {
         background-color: #fff;
         min-width: 20%;
@@ -61,6 +108,7 @@ section {
         font-weight: 600;
         color: #fff;
         cursor: pointer;
+        
 
         li {
           margin: 10px 0;
@@ -71,9 +119,11 @@ section {
             max-height: calc(18px * 6);
             overflow-y: hidden;
             margin-top: 30px;
+            
 
             span {
             font-weight: 400;
+            overflow-wrap: break-word;
           }
         }
         

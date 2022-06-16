@@ -46,7 +46,7 @@ section {
   #tv-show-list {
     list-style-type: none;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: hidden;
 
 
     .tv-show-card {
